@@ -1,0 +1,300 @@
+{
+  "metainfo" : {
+    "id" : "1",
+    "language" : "python",
+    "fabricId" : "1527",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "prophecy_ashish.hsbcsamplepipeline.functions",
+      "sharedFunctionPackageNames" : [ ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Full",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "samplepipeline",
+    "configurationVersion" : "v1"
+  },
+  "connections" : [ {
+    "id" : "2q_0gK-AWiCB5uBIDRFRS$$QNV2d5YJHncooTPEmnMNk",
+    "source" : "VePxn7vUWV6x-lwBEAExA$$NhNgn29O2p-U40Z-w8li6",
+    "sourcePort" : "P0zWvDLNTFz23WsiQrm6Y$$9NvSVctTSnwaaMzDfQWyg",
+    "target" : "bcCa2PvccoV58_cotx3g2$$kNoH_qSnEtA-csWIrqmrM",
+    "targetPort" : "rAhl8Kr0FswG1euSxLPHv$$u_CHJ4I0QnbtLy_nJxxl9"
+  }, {
+    "id" : "3dndcgjeJaIRi_LpBZaz2$$UgCsSwb-Gh3Hz7Jom8x9B",
+    "source" : "bcCa2PvccoV58_cotx3g2$$kNoH_qSnEtA-csWIrqmrM",
+    "sourcePort" : "cmFLj5JiBwjhTK4ERr1uR$$vKlftFaqiYnxZw95rsL-A",
+    "target" : "LCdLaG0xXyU5c-ANbunfY$$LZbeIi8TMz6rNbmBtHHdH",
+    "targetPort" : "4Ip84CzE0OH3ROE3WB0P2$$nfjs7dMBR4GiWeRIJ8tk9"
+  } ],
+  "processes" : {
+    "VePxn7vUWV6x-lwBEAExA$$NhNgn29O2p-U40Z-w8li6" : {
+      "id" : "VePxn7vUWV6x-lwBEAExA$$NhNgn29O2p-U40Z-w8li6",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "SourceConnection_1",
+        "slug" : "SourceConnection_1",
+        "x" : 120,
+        "y" : 120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "P0zWvDLNTFz23WsiQrm6Y$$9NvSVctTSnwaaMzDfQWyg",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/SourceConnection_1"
+      }
+    },
+    "bcCa2PvccoV58_cotx3g2$$kNoH_qSnEtA-csWIrqmrM" : {
+      "id" : "bcCa2PvccoV58_cotx3g2$$kNoH_qSnEtA-csWIrqmrM",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "Deduplication_2",
+        "slug" : "Deduplication_2",
+        "x" : 320,
+        "y" : 120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "rAhl8Kr0FswG1euSxLPHv$$u_CHJ4I0QnbtLy_nJxxl9",
+          "slug" : "SourceConnection_1",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "id",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Description",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Shot_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Active_Date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Expiry_Date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Active_flag",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "cmFLj5JiBwjhTK4ERr1uR$$vKlftFaqiYnxZw95rsL-A",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "colName" : "id"
+        } ],
+        "dedupType" : "first",
+        "columnsSelector" : [ "rAhl8Kr0FswG1euSxLPHv$$u_CHJ4I0QnbtLy_nJxxl9##id" ],
+        "orders" : [ {
+          "expression" : {
+            "format" : "sql",
+            "expression" : "id"
+          },
+          "sortType" : "asc"
+        } ],
+        "useOrderBy" : true
+      }
+    },
+    "LCdLaG0xXyU5c-ANbunfY$$LZbeIi8TMz6rNbmBtHHdH" : {
+      "id" : "LCdLaG0xXyU5c-ANbunfY$$LZbeIi8TMz6rNbmBtHHdH",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "TargetConnection_3_3",
+        "slug" : "TargetConnection_3_3",
+        "x" : 520,
+        "y" : 120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "4Ip84CzE0OH3ROE3WB0P2$$nfjs7dMBR4GiWeRIJ8tk9",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "id",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Description",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Shot_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Active_Date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Expiry_Date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Active_flag",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/TargetConnection_3_3"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  }
+}
